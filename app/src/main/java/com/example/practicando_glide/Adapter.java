@@ -1,7 +1,7 @@
 package com.example.practicando_glide;
 
+import android.content.ClipData;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -12,7 +12,7 @@ import com.example.practicando_glide.databinding.ItemBinding;
 import java.util.List;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
-    private List<String> imagenes;
+    private List<ClipData.Item> imagenes;
     @NonNull
     @Override
     public Adapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -22,13 +22,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-        String item = imagenes.get(position);
+        String item = String.valueOf(imagenes.get(position));
         holder.bind(item);
     }
 
     @Override
     public int getItemCount() {
         return imagenes.size();
+    }
+    public void setData(List<ClipData.Item> data) {
+        this.imagenes = data;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
