@@ -22,7 +22,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
-
+        String item = imagenes.get(position);
+        holder.bind(item);
     }
 
     @Override
@@ -31,9 +32,12 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
+private ItemBinding itemBinding;
         public ViewHolder(ItemBinding binding) {
             super(binding.getRoot());
+        }
+
+        public void bind(String imagenes) {
         }
     }
 }
