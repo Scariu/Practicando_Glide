@@ -1,21 +1,25 @@
 package com.example.practicando_glide;
 
+import android.content.ClipData;
+
 public class Imagen {
 
-    private String item;
-    private String url;
+    protected String text;
+    protected String url;
 
-    public Imagen(String item, String url) {
-        this.item = item;
+    public Imagen(String text, String url) {
+        this.text = text;
         this.url = url;
     }
-    public String getItem() {
-        return item;
+
+    public String getText() {
+        return text;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setText(String text) {
+        this.text = text;
     }
+
     public String getUrl() {
         return url;
     }
@@ -23,5 +27,5 @@ public class Imagen {
     public void setUrl(String url) {
         this.url = url;
     }
-
 }
+
