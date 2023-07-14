@@ -3,6 +3,8 @@ package com.example.practicando_glide;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -76,6 +78,13 @@ public class SecondFragment extends Fragment {
         binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
         Glide.with(this).load(imagenUrl).into(binding.imageViewSecond);
         binding.textViewSecond.setText(imagenText);
+        initListeners();
         return binding.getRoot();
+    }
+
+    private void initListeners() {
+        binding.imageButtonBack.setOnClickListener(v ->{
+            Navigation.findNavController(binding.getRoot()).navigateUp();
+        });
     }
 }
