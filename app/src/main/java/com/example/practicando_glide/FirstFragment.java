@@ -34,6 +34,11 @@ public class FirstFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String imageText;
+
+    private String imageUrl;
+
+
     public FirstFragment() {
         // Required empty public constructor
     }

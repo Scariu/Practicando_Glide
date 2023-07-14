@@ -8,12 +8,20 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bumptech.glide.Glide;
+import com.example.practicando_glide.databinding.FragmentFirstBinding;
+import com.example.practicando_glide.databinding.FragmentSecondBinding;
+
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SecondFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class SecondFragment extends Fragment {
+
+    private FragmentSecondBinding binding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,6 +32,9 @@ public class SecondFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String imagenUrl;
+
+    private String imagenText;
     public SecondFragment() {
         // Required empty public constructor
     }
@@ -42,6 +53,8 @@ public class SecondFragment extends Fragment {
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
+        args.putString("url", fragment.imagenUrl);
+        args.putString("text", fragment.imagenText);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,13 +65,17 @@ public class SecondFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+            imagenUrl = getArguments().getString("url");
+            imagenText = getArguments().getString("text");
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        binding = FragmentSecondBinding.inflate(getLayoutInflater(), container, false);
+        Glide.with(this).load(imagenUrl).into(binding.imageViewSecond);
+        binding.textViewSecond.setText(imagenText);
+        return binding.getRoot();
     }
 }

@@ -1,6 +1,7 @@
 package com.example.practicando_glide;
 
 import android.media.Image;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,7 +33,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
     public void onBindViewHolder(@NonNull Adapter.ViewHolder holder, int position) {
         Imagen item = image.get(position);
         holder.bind(item);
-
     }
 
     @Override
@@ -52,7 +52,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
             super(binding.getRoot());
             this.binding = binding;
             itemView.setOnClickListener(this);
-
         }
 
         public void bind(Imagen image) {
@@ -62,7 +61,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
 
         @Override
         public void onClick(View v) {
-            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment);
+            int position = getLayoutPosition();
+            String imageUrl = String.valueOf(image.get(position).getUrl());
+            String imageText = String.valueOf(image.get(position).getText());
+            Bundle bundle = new Bundle();
+            bundle.putString("url", imageUrl);
+            bundle.putString("text", imageText);
+            Navigation.findNavController(binding.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment, bundle);
         }
     }
 }
