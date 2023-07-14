@@ -34,11 +34,6 @@ public class FirstFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    private String imageText;
-
-    private String imageUrl;
-
-
     public FirstFragment() {
         // Required empty public constructor
     }
@@ -74,10 +69,14 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentFirstBinding.inflate(getLayoutInflater(), container, false);
+        initAdapter();
+        return binding.getRoot();
+    }
+
+    private void initAdapter(){
         Adapter adapter = new Adapter();
         adapter.setImages(image);
         binding.recyclerView.setAdapter(adapter);
-        return binding.getRoot();
     }
 
 
