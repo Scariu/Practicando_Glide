@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/imageViewSecond"
-        android:layout_width="337dp"
-        android:layout_height="455dp"
+        android:layout_width="313dp"
+        android:layout_height="421dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="52dp"
         android:layout_marginEnd="16dp"
         android:src="@drawable/ic_launcher_foreground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,11 +28,22 @@
         android:layout_marginBottom="16dp"
         android:text="TextView"
         android:textColor="#0C0C0C"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewSecond"
-        app:layout_constraintVertical_bias="0.322" />
+        app:layout_constraintVertical_bias="0.261" />
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
