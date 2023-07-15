@@ -84,8 +84,7 @@ public class FirstFragment extends Fragment {
         List<Imagen> listItem = new ArrayList<>();
         Imagen item01 = new Imagen("Zhuo Cheng you", "https://unsplash.com/photos/UBvtBr_FmrY/download?force=true&w=640");
         Imagen item02 = new Imagen("billow926", "https://unsplash.com/photos/pNoP-qVwBFQ/download?force=true&w=640");
-        Imagen item03 = new Imagen("PhilippDeiß", "https://unsplash.com/photos/LfJx0gqqiEc/download?force=true&w=64 0");
-        Imagen item04 = new Imagen("Huper by Joshua Earle", "https://unsplash.com/photos/_p8gVNNsWw4/download?force=true&w=640");
+        Imagen item03 = new Imagen("PhilippDeiß", "https://unsplash.com/photos/LfJx0gqqiEc/download?force=true&w=640");
         Imagen item05 = new Imagen("Melnychuk Nataliya", "https://unsplash.com/photos/rnPGCe7LsQo/download?force=true&w=640");
         Imagen item06 = new Imagen("Teagan Maddux", "https://unsplash.com/photos/k2DbTXQ0yrQ/download?force=true&w=640");
         Imagen item07 = new Imagen("Chen Liu", "https://unsplash.com/photos/kZH8X0q4Nvo/download?force=true&w=640");
@@ -93,12 +92,11 @@ public class FirstFragment extends Fragment {
         Imagen item09 = new Imagen("Parker Coffman", "https://unsplash.com/photos/mNWrQ9O6KZw/download?force=true&w=640");
         Imagen item10 = new Imagen("XPS", "https://unsplash.com/photos/8pb7Hq539Zw/download?force=true&w=640");
         Imagen item11 = new Imagen("Daniel J. Schwarz", "https://unsplash.com/photos/l8BvDmt8Ac4/download?force=true&w=640");
-        Imagen item12 = new Imagen("Wesley Armstrong", "https://unsplash.com/photos/q0wqYpyWDpc/download?force=true&w=640");
+
 
         listItem.add(item01);
         listItem.add(item02);
         listItem.add(item03);
-        listItem.add(item04);
         listItem.add(item05);
         listItem.add(item06);
         listItem.add(item07);
@@ -106,7 +104,7 @@ public class FirstFragment extends Fragment {
         listItem.add(item09);
         listItem.add(item10);
         listItem.add(item11);
-        listItem.add(item12);
+
 
         return listItem;
     }
